@@ -1,10 +1,10 @@
 <?php
 require_once '../include.php';
 ?>
-
 <script class="ppjs">
     $(function () {
         var colM = [
+		
             { title: "Order ID", width: 100, dataIndx: "OrderID" },            
             { title: "Customer Name", width: 130, dataIndx: "CustomerName" },
             { title: "Product Name", width: 190, dataIndx: "ProductName" },
@@ -39,9 +39,12 @@ require_once '../include.php';
             bottomVisible: false,
             title: "Shipping Orders"
         });
+		
     });
 
-</script>    
+</script>
+</head>
+<body>
 <div id="grid_php" style="margin:5px auto;"></div>
 </body>
 </html>

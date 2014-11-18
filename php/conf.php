@@ -2,8 +2,8 @@
 // mysql example
 
 define('DB_HOSTNAME','localhost'); // database host name
-define('DB_USERNAME', 'username');     // database user name
-define('DB_PASSWORD', 'password'); // database password
+define('DB_USERNAME', 'root');     // database user name
+define('DB_PASSWORD', ''); // database password
 define('DB_NAME', 'northwind'); // database name 
 
 function getDatabaseHandle(){
