@@ -15,11 +15,9 @@
         
     $dbh = getDatabaseHandle();
     
-    $sql = "Select OrderID,CustomerName,ProductName,UnitPrice,Quantity,
-            OrderDate,RequiredDate,ShippedDate,ShipCountry,Freight,ShipName,
-            ShipAddress,ShipCity,ShipRegion,ShipPostalCode from invoices ".
+    $sql = "Select sku,length,rate,size,path,cover,type,genre,comments,publish,query from ct ".
             $where.
-            " order by OrderID";
+            " order by sku";
 
     //echo $sql;
     $stmt = $dbh->prepare($sql);

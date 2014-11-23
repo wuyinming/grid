@@ -7,6 +7,8 @@ div.pq-grid-toolbar-search * { margin: 1px 5px 1px 0px; vertical-align: middle; 
 div.pq-grid-toolbar-search .pq-separator { margin-left: 10px; margin-right: 10px; }
 div.pq-grid-toolbar-search select { height: 18px; position: relative; }
 div.pq-grid-toolbar-search input.pq-filter-txt { width: 180px; border: 1px solid #b5b8c8; height: 16px; padding: 0px 5px; }
+div.pq-grid-title { text-align: center; }
+td div.pq-td-div { height: 20px; overflow: hidden; line-height: 20px; padding: 0; text-align: center; }
 </style>
 <script class="ppjs">
 $(function () {
@@ -22,29 +24,26 @@ $(function () {
         }
     }
     //define colModel
-        var colM = [
-            { title: "Order ID", width: 100, dataIndx: "OrderID" },            
-            { title: "Customer Name", width: 130, dataIndx: "CustomerName" },
-            { title: "ShipCountry", width: 100, dataIndx: "ShipCountry" },
-            { title: "Product Name", width: 190, dataIndx: "ProductName" },
-            { title: "Unit Price", width: 100, dataIndx: "UnitPrice", align: "right" },
-            { title: "Quantity", width: 100, dataIndx: "Quantity", align:"right" },            
-            { title: "Order Date", width: 100, dataIndx: "OrderDate"},
-            { title: "Required Date", width: 100, dataIndx: "RequiredDate" },
-            { title: "Shipped Date", width: 100, dataIndx: "ShippedDate" },            
-            { title: "Freight", width: 100, align: "right", dataIndx: "Freight" },
-            { title: "Shipping Name", width: 120, dataIndx: "ShipName" },
-            { title: "Shipping Address", width: 180, dataIndx: "ShipAddress" },
-            { title: "Shipping City", width: 100, dataIndx: "ShipCity" },
-            { title: "Shipping Region", width: 110, dataIndx: "ShipRegion" },
-            { title: "Shipping Postal Code", width: 130, dataIndx: "ShipPostalCode" }
-        ];
+    var colM = [
+		{ title: "SKU", width: 100, dataIndx: "sku", align: "center" },   
+		{ title: "Length", width: 100, dataIndx: "length", align: "center" },  
+		{ title: "Data Rate", width: 100, dataIndx: "rate", align: "center" },
+		{ title: "Size", width: 100, dataIndx: "size", align: "center"},
+		{ title: "Path", width: 100, dataIndx: "path", align: "center" },
+		{ title: "Cover", width: 100, dataIndx: "cover", align: "center"},	
+		{ title: "Type", width: 100,  dataIndx: "type", align: "center" },
+		{ title: "Release Date", width: 130, dataIndx: "publish", align: "center"},
+		{ title: "Genre", width: 200, dataIndx: "genre", align: "center" },       
+		{ title: "Comments", width: 100, dataIndx: "comments", align: "center"},
+		{ title: "Query", width: 100, dataIndx: "query", align: "center" }
+	];
     //define dataModel
     var dataModel = {
         location: "remote",
         dataType: "JSON",
         method: "POST",
         paging: "local",
+		rPP: 20,
         filterIndx: "",
         filterValue: "",
         getUrl: function () {
@@ -58,6 +57,7 @@ $(function () {
             return obj;
         },
         getData: function (response) {
+	alert(response);
             return { data: response };
         }
     }
@@ -65,11 +65,11 @@ $(function () {
         dataModel: dataModel,
         colModel: colM,
         editable: false,
-        title: "Shipping Orders",
+        title: "Data Base Management System",
         topVisible: true,
         resizable: true,
         columnBorders: true,
-        freezeCols: 2
+        freezeCols: 1
     };
     //obj.render = pqFilter.pqgridrender;
     //append the filter toolbar in top section of grid
@@ -85,8 +85,8 @@ $(function () {
         });
  
         $("<select id='pq-filter-select-column'>\
-        <option value='ShipCountry'>Ship Country</option>\
-        <option value='CustomerName'>Customer Name</option>\
+        <option value='SKU'>SKU</option>\
+        <option value='Genre'>Genre</option>\
         </select>").appendTo($toolbar)
            .change(function () {
             pqFilter.search();
@@ -97,5 +97,8 @@ $(function () {
     var $grid = $("#grid_php").pqGrid(obj);
 });
 </script>
+</head>
+<body>
 <div id="grid_php" style="margin:5px auto;"></div>
-</body></html>
+</body>
+</html>

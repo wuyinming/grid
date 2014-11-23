@@ -4,7 +4,7 @@
 define('DB_HOSTNAME','localhost'); // database host name
 define('DB_USERNAME', 'root');     // database user name
 define('DB_PASSWORD', ''); // database password
-define('DB_NAME', 'northwind'); // database name 
+define('DB_NAME', 'test'); // database name 
 
 function getDatabaseHandle(){
     $dsn = 'mysql:host='.DB_HOSTNAME.';dbname='.DB_NAME;

@@ -2,23 +2,24 @@
  * @author Szincsak Andras
  */
 $.paramquery.pqGrid.regional ['hu'] = { 
-    strLoading: "Betöltés...", 
-    strAdd: "Új", 
+    strLoading: "Terhelés", 
+    strAdd: "�j", 
     strEdit: "Szerkeszt", 
-    strDelete: "Töröl", 
-    strSearch: "Keresés", 
-    strNothingFound: "Nincs találat", 
-    strSelectedmatches: "{1} találatból {0} kiválasztva", 
-    strPrevResult: "Elõzõ találat", 
-    strNextResult: "Következõ találat" 
+    strDelete: "T�r�l", 
+    strSearch: "Keres�s", 
+    strNothingFound: "Nincs tal�lat", 
+    strSelectedmatches: "{1} tal�latb�l {0} kiv�lasztva", 
+    strPrevResult: "korábbi eredmény", 
+    strNextResult: "következő eredmény",
+    strNoRows: "Nincs megjelenítendő sorok"     
 }; 
 $.paramquery.pqPager.regional ['hu'] = { 
     strPage: "Oldal: {0} / {1}", 
-    strFirstPage: "Elsõ oldal", 
-    strPrevPage: "Elõzõ oldal", 
-    strNextPage: "Következõ oldal", 
+    strFirstPage: "Első oldal", 
+    strPrevPage: "Előző oldal", 
+    strNextPage: "Következő oldal", 
     strLastPage: "Utolsó oldal", 
-    strRefresh: "Frissítés", 
-    strRpp: "Találatok az oldalon:", 
-    strDisplay: "{2} találatból megjelenítve {0} - {1}." 
+    strRefresh: "Felfrissít", 
+    strRpp: "Találat oldalanként: {0}", 
+    strDisplay: "Megjelenítése {0} az {1} {2} elemek." 
 };
